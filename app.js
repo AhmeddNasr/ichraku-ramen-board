@@ -16,10 +16,10 @@ var compression = require('compression');
 var app = express();
 app.use(helmet());
 
-
+// 'mongodb+srv://dbuser:asd@cluster0.g0xzg.mongodb.net/mydb?retryWrites=true&w=majority';
 //database
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://dbuser:asd@cluster0.g0xzg.mongodb.net/mydb?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 var User = require('./models/user');
 
