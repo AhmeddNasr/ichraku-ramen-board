@@ -1,0 +1,17 @@
+extends formlayout
+
+block content
+    h4 Login
+    br
+    form(method='POST' action='/login')
+        div.form-group
+            label Username:
+                input.form-control(type='text', name='username' required)
+        div.form-group
+            label password:
+                input.form-control(type='password', name='password' required='true')
+        
+        button.btn.btn-primary(type='submit') Login
+    br
+    p Don't have an account yet? 
+        a(href="/sign-up") Sign up

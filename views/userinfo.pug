@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 WIP
+    p Username: #{user.username}
+    p First name: #{user.first_name}
+    p Last name: #{user.last_name}
+    p membership status: 
+        if user.membership
+            sans.text-success Member
+        else
+            sans.text-danger Not a member
+    
+        
+    
+

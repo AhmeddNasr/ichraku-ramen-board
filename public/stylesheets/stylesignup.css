@@ -1,0 +1,27 @@
+.signup{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.container{
+    margin: 30px;
+}
+
+body{
+    background-color:rgba(211, 211, 211, 0.048) !important;
+}
+
+
+@media (min-width: 1200px) {
+    .container{
+        margin-top: 100px;
+        min-width: 1200px !important;
+    }
+}
+
+@media (min-width: 700px) {
+    .container{
+        max-width: 700px !important;
+    }
+}
+

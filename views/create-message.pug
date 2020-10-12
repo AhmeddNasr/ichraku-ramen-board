@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div#nav(class="d-flex flex-row justify-content-between container-fluid align-items-center")
+        p Ichraku ramen
+        div.btn-group
+            button.btn.btn-primary(type="button") !{user.first_name + ' ' + user.last_name} 
+            button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+            div.dropdown-menu.dropdown-menu-right
+                a.dropdown-item(href=user.url) View profile
+                a.dropdown-item(href="/") report a problem
+                div.dropdown-divider
+                a.dropdown-item(href="/logout") logout
+
+    div.container
+        p Posting as: #{fullname}
+        form(method='POST' action='')
+            div.form-group
+                label message (max 400 characters)
+                textarea(class="form-control" name="text")
+            button.btn.btn-primary(type="submit") post
+        
+            

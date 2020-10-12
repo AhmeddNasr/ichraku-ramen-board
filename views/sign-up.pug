@@ -1,0 +1,28 @@
+extends formlayout
+
+block content
+    h4 Sign up now to redeem your membership
+    form(method='POST' action='')
+        div.form-group
+            label(for='firstname') First Name:
+            input#firstname.form-control(type='text', name='first_name' required='true')
+
+        div.form-group
+            label(for='lastname') Last Name:
+            input#lastname.form-control(type='text', name='last_name' required='true')
+
+        div.form-group
+            label(for='Username') Username:
+            input#username.form-control(type='text', name='username' required='true')
+
+        div.form-group
+            label(for='Password') Password:
+            input#password.form-control(type='password', name='password' required='true')
+        
+        div.form-group
+            label(for='Password2') Confirm password:
+            input#password2.form-control(type='password', name='password' required='true')
+
+        button.btn.btn-primary(type='submit') Sign Up
+    p Already a member? 
+        a(href="/login") Login 

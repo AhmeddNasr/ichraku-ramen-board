@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div(style="height: 100vh;" class="become-member-container bg-primary")
+        div(class="container h-100")
+            div(class="align-items-center justify-content-center row h-100 ")
+                    form(action="" method="POST" class="col text-center")
+                        div.form-group
+                            label.become-member Enter secret code
+                            input(type="text" name="secretcode" class="form-control limitedinput m-auto")
+                        button.btn.btn-light.become-member(type="submit") submit
+                        a.btn.btn-light.become-member(href="/") go back

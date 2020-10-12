@@ -1,0 +1,40 @@
+extends layout
+
+block content
+        div#nav(class="d-flex flex-row justify-content-between container-fluid align-items-center")
+                p Ichraku ramen
+                if !user
+                        a(href="/login") login
+                if user
+                        if user.membership == false
+                                a(href="/become-a-member" class="btn btn-primary") Become a member
+                        else
+                                a.btn.btn-primary(href="/create-message") create a new post
+                        div.btn-group
+                                button.btn.btn-primary(type="button") !{user.full_name} 
+                                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                div.dropdown-menu.dropdown-menu-right
+                                        a.dropdown-item(href=user.url) View profile
+                                        a.dropdown-item(href="/") report a problem
+                                        div.dropdown-divider
+                                        a.dropdown-item(href="/logout") logout
+        if !user
+                p.text-danger.text-center you must be a member to view usernames or timestamps
+        if user && !user.membership
+                p.text-danger.text-center you must be a member to view usernames or timestamps
+        div.container#messageboard(class="d-flex flex-column")
+                ul.container
+                each message, index in messages
+                        li.message.row
+                                if user
+                                        if user.membership
+                                                div.col
+                                                        a.messageauthor(href=message.author.url) #{message.author.full_name}
+                                                        sans.messagetimestamp #{message.timestamp_formatted}
+                                else
+                                        p.messageauthor.col Member:
+                                p.messagetext.col-12 #{message.text}
+                                
+                        
+                
+                

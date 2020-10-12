@@ -1,0 +1,94 @@
+.bg-lobster{
+  background-color: var(--lobster-color);
+  color: white;
+}
+
+.bg-orange{
+  background-color: var(--orange-color);
+  color: white;
+}
+
+.bg-blue{
+  background-color: var(--blue-color);
+  color: white;
+}
+
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+a {
+  color: white;
+}
+
+#nav > *{
+  margin: 0;
+}
+
+#nav{
+  padding-bottom: 20px;
+}
+
+.fullname {
+  text-transform: capitalize;
+}
+
+.container-fluid{
+  padding: 20px;
+}
+
+
+.become-member{
+  margin: 3% 0;
+}
+
+label.become-member{
+  font-size: 5rem;
+}
+
+.become-member-container{
+  background-color: var(--blue-color);
+  color: white;
+
+}
+
+.limitedinput{
+  max-width: 768px;
+}
+
+.btn.become-member{
+  padding: 0.5rem;
+  margin: 3% 2rem;
+}
+
+#messageboard{
+  margin-top: 20px;
+  max-width: 768px;
+  border: 1px black solid;
+  border-radius: 4px;
+
+}
+
+@media (max-width: 800px){
+  #messageboard{
+    border: none;
+  }
+}
+
+.message{
+  list-style: none;
+  padding: 10px;
+}
+
+.messageauthor{
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.messagetimestamp{
+  color: #5e5e5e;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
