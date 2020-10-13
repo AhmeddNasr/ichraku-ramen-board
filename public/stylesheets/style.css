@@ -1,3 +1,7 @@
+html > * {
+  box-sizing: border-box !important;
+}
+
 .bg-lobster{
   background-color: var(--lobster-color);
   color: white;
@@ -15,7 +19,6 @@
 
 body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif !important;
-  box-sizing: border-box !important;
 }
 
 a {
@@ -28,6 +31,13 @@ a {
 
 #nav{
   padding-bottom: 20px;
+}
+
+#navitems{
+  width: 100%;
+}
+
+#createnewpost{
 }
 
 .fullname {
@@ -67,12 +77,17 @@ label.become-member{
   max-width: 768px;
   border: 1px black solid;
   border-radius: 4px;
-
 }
 
-@media (max-width: 800px){
+@media only screen and (max-width: 900px) {
   #messageboard{
-    border: none;
+    border: none !important;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  #messageboard{
+    max-width: 768px;
   }
 }
 

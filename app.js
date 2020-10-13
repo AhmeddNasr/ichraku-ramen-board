@@ -14,7 +14,7 @@ var bodyparser = require('body-parser');
 var helmet = require('helmet');
 var compression = require('compression');
 var app = express();
-app.use(helmet());
+// app.use(helmet());
 
 // 'mongodb+srv://dbuser:asd@cluster0.g0xzg.mongodb.net/mydb?retryWrites=true&w=majority';
 //database

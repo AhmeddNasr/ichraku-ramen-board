@@ -1,23 +1,6 @@
-extends layout
+extends navigation
 
-block content
-        div#nav(class="d-flex flex-row justify-content-between container-fluid align-items-center")
-                p Ichiraku ramen
-                if !user
-                        a(href="/login") login
-                if user
-                        if user.membership == false
-                                a(href="/become-a-member" class="btn btn-primary") Become a member
-                        else
-                                a.btn.btn-primary(href="/create-message") create a new post
-                        div.btn-group
-                                button.btn.btn-primary(type="button") !{user.full_name} 
-                                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-                                div.dropdown-menu.dropdown-menu-right
-                                        a.dropdown-item(href=user.url) View profile
-                                        a.dropdown-item(href="/") report a problem
-                                        div.dropdown-divider
-                                        a.dropdown-item(href="/logout") logout
+block main
         if !user
                 p.text-danger.text-center you must be a member to view usernames or timestamps
         if user && !user.membership

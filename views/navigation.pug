@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div#nav(class="d-flex flex-row justify-content-around container-fluid align-items-center")
+        div.row.align-items-center.justify-content-center#navitems
+            a(href="/" class="col-sm-12 col-lg-4") Ichiraku ramen
+            if !user
+                div(class="col-sm-12 col-lg-8 order-12 d-flex")
+                    a(href="/login" class="btn btn-primary ml-auto") login
+            if user
+                    if user.membership == false
+                            a(href="/become-a-member" class="btn btn-primary col-sm-12 col-lg-4") Become a member
+                    else
+                        div.col-sm-12.col-lg-4.d-flex
+                            a#createnewpost(class="m-auto btn btn-primary m-lg-auto ml-sm-auto")(href="/create-message") create a new post
+                    div.col-sm-12.col-lg-4.d-flex
+                        div.btn-group(class="ml-auto")
+                                button.btn.btn-primary(type="button") !{user.full_name} 
+                                button.btn.btn-primary.dropdown-toggle.dropdown-toggle-split(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                div.dropdown-menu.dropdown-menu-right
+                                        a.dropdown-item(href=user.url) View profile
+                                        a.dropdown-item(href="/") report a problem
+                                        div.dropdown-divider
+                                        a.dropdown-item(href="/logout") logout
+    block main
