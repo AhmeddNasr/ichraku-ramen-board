@@ -19,7 +19,7 @@ app.use(helmet());
 // 'mongodb+srv://dbuser:asd@cluster0.g0xzg.mongodb.net/mydb?retryWrites=true&w=majority';
 //database
 var mongoose = require('mongoose');
-var mongoDB = process.env.MONGODB_URI;
+var mongoDB = process.env.MONGODB_URI || 'mongodb+srv://dbuser:asd@cluster0.g0xzg.mongodb.net/mydb?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 var User = require('./models/user');
 
